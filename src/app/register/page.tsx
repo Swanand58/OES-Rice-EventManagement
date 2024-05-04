@@ -5,11 +5,11 @@ import { useRouter } from "next/navigation";
 
 const RegisterPage: React.FC = () => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phoneNumber: "",
-    password: "",
+    FirstName: "",
+    LastName: "",
+    Email: "",
+    PhoneNumber: "",
+    Password: "",
   });
   const [isLoading, setLoading] = useState(false);
 
@@ -52,63 +52,36 @@ const RegisterPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-200">
-      <h1 className="text-xl font-bold text-black">Register new user</h1>
-      <form className="mt-4" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="firstName"
-          placeholder="First Name"
-          className="mb-2 p-2 border rounded text-black"
-          value={formData.firstName}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="lastName"
-          placeholder="Last Name"
-          className="mb-2 p-2 border rounded text-black"
-          value={formData.lastName}
-          onChange={handleChange}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          className="mb-2 p-2 border rounded text-black"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        <input
-          type="tel"
-          name="phoneNumber"
-          placeholder="Phone Number"
-          className="mb-2 p-2 border rounded text-black"
-          value={formData.phoneNumber}
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          className="mb-2 p-2 border rounded text-black"
-          value={formData.password}
-          onChange={handleChange}
-        />
-        <button
-          type="submit"
-          className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700"
-          disabled={isLoading}
-        >
-          {isLoading ? "Registering..." : "Register"}
+    <div className="register-container">
+      <form className="form-container" onSubmit={handleSubmit}>
+        <h1 className="text-xl font-bold text-black text-center">Register</h1>
+        {Object.entries(formData).map(([key, value]) => (
+          <input
+            key={key}
+            type={
+              key === "password"
+                ? "password"
+                : key === "email"
+                ? "email"
+                : "text"
+            }
+            name={key}
+            placeholder={key.replace(/([A-Z])/g, " $1").trim()}
+            value={value}
+            onChange={handleChange}
+            className="input-field"
+          />
+        ))}
+        <button type="submit" className="submit-button">
+          Register user
         </button>
+        <Link href="/" className="link">
+          Go back to Home
+        </Link>
+        <Link href="/login-nr" className="link">
+          Already registered user? Login
+        </Link>
       </form>
-      <Link className="mt-4 text-blue-500 hover:underline" href="/">
-        Go back to Home
-      </Link>
-      <Link className="text-blue-500 hover:underline" href="/login-nr">
-        Already registered user? Login
-      </Link>
     </div>
   );
 };

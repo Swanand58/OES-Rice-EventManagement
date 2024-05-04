@@ -49,12 +49,14 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-200">
-      <h1 className="text-xl font-bold text-black">Login</h1>
-      <form className="mt-4" onSubmit={handleLogin}>
+    <div className="login-nr-container">
+      <form className="form-nr-container" onSubmit={handleLogin}>
+        <h1 className="text-xl font-bold text-black flex justify-center items-center">
+          Login
+        </h1>
         <input
           type="text"
-          placeholder="Username"
+          placeholder="Email"
           className="mb-2 p-2 border rounded text-black"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
@@ -73,14 +75,16 @@ const LoginPage: React.FC = () => {
         >
           {isLoading ? "Logging in..." : "Login"}
         </button>
+        {error && <p className="mt-4 text-red-500">{error}</p>}
+        <div className="links-container">
+          <Link className="link" href="/">
+            Go back to Home
+          </Link>
+          <Link className="link" href="/register">
+            Don't have a Login? Sign up here
+          </Link>
+        </div>
       </form>
-      {error && <p className="mt-4 text-red-500">{error}</p>}
-      <Link className="mt-4 text-blue-500 hover:underline" href="/">
-        Go back to Home
-      </Link>
-      <Link className="mt-4 text-blue-500 hover:underline" href="/register">
-        Dont have a Login? Sign up here
-      </Link>
     </div>
   );
 };

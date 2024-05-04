@@ -47,35 +47,31 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-200">
-      <h1 className="text-xl font-bold text-black">Login with Rice NetId</h1>
-      <form className="mt-4" onSubmit={handleLogin}>
+    <div className="login-container">
+      <form className="form-container" onSubmit={handleLogin}>
+        <h1 className="text-xl font-bold text-black">Login with Rice NetId</h1>
         <input
           type="text"
           placeholder="Username"
-          className="mb-2 p-2 border rounded text-black"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          className="mb-2 p-2 border rounded text-black"
         />
         <input
           type="password"
           placeholder="Password"
-          className="mb-2 p-2 border rounded text-black"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          className="mb-2 p-2 border rounded text-black"
         />
-        <button
-          type="submit"
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
-          disabled={isLoading}
-        >
+        <button type="submit" disabled={isLoading}>
           {isLoading ? "Logging in..." : "Login"}
         </button>
+        {error && <p className="text-red-500">{error}</p>}
+        <Link className="mt-4 text-blue-500 hover:underline" href="/">
+          Go back to Home
+        </Link>
       </form>
-      {error && <p className="mt-4 text-red-500">{error}</p>}
-      <Link className="mt-4 text-blue-500 hover:underline" href="/">
-        Go back to Home
-      </Link>
     </div>
   );
 };

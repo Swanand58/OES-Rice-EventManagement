@@ -180,39 +180,15 @@ const QuestionForm = () => {
   const getInputField = (question, index) => {
     switch (question.type) {
       case "text":
-        return (
-          <input
-            type="text"
-            value={answers[index] || ""}
-            onChange={(e) => handleInputChange(e, index)}
-            className="border p-2 rounded w-full"
-          />
-        );
       case "number":
-        return (
-          <input
-            type="number"
-            value={answers[index] || ""}
-            onChange={(e) => handleInputChange(e, index)}
-            className="border p-2 rounded w-full"
-          />
-        );
       case "date":
-        return (
-          <input
-            type="date"
-            value={answers[index] || ""}
-            onChange={(e) => handleInputChange(e, index)}
-            className="border p-2 rounded w-full"
-          />
-        );
       case "time":
         return (
           <input
-            type="time"
+            type={question.type}
             value={answers[index] || ""}
             onChange={(e) => handleInputChange(e, index)}
-            className="border p-2 rounded w-full"
+            className="input-field border p-2 rounded text-black"
           />
         );
       case "dropdown":
@@ -220,7 +196,7 @@ const QuestionForm = () => {
           <select
             value={answers[index] || ""}
             onChange={(e) => handleInputChange(e, index)}
-            className="border p-2 rounded w-full"
+            className="select-field border p-2 rounded text-black"
           >
             {question.options.map((option) => (
               <option key={option} value={option}>
@@ -230,22 +206,19 @@ const QuestionForm = () => {
           </select>
         );
       case "radio":
-        return (
-          <div className="input-options">
-            {question.options.map((option) => (
-              <label key={option} className="radio-option">
-                <input
-                  type="radio"
-                  name={`question_${index}`}
-                  value={option}
-                  checked={answers[index] === option}
-                  onChange={(e) => handleInputChange(e, index)}
-                />
-                {option}
-              </label>
-            ))}
-          </div>
-        );
+        return question.options.map((option) => (
+          <label key={option} className="radio-option">
+            <input
+              type="radio"
+              name={`question_${index}`}
+              value={option}
+              checked={answers[index] === option}
+              onChange={(e) => handleInputChange(e, index)}
+              className="mr-2"
+            />
+            {option}
+          </label>
+        ));
       case "checkbox":
         return (
           <label className="checkbox-option">
@@ -253,6 +226,7 @@ const QuestionForm = () => {
               type="checkbox"
               checked={!!answers[index]}
               onChange={(e) => handleInputChange(e, index)}
+              className="mr-2"
             />
             {question.label}
           </label>
@@ -263,37 +237,35 @@ const QuestionForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="main-container">
       <form
         onSubmit={handleSubmit}
         className="bg-white p-6 rounded shadow-md w-full max-w-lg"
       >
-        <div className="mb-4">
-          {renderInputField(
-            questions[currentQuestionIndex],
-            currentQuestionIndex
-          )}
-        </div>
-        <div className="flex justify-between">
+        {renderInputField(
+          questions[currentQuestionIndex],
+          currentQuestionIndex
+        )}
+        <div className="button-container">
           <button
             onClick={handlePrevious}
             disabled={currentQuestionIndex === 0}
-            className="bg-gray-300 hover:bg-gray-400 text-black py-2 px-4 rounded"
+            className="previous-button bg-gray-300 hover:bg-gray-400 text-black py-2 px-4 rounded"
           >
             Previous
           </button>
           {currentQuestionIndex < questions.length - 1 ? (
             <button
               onClick={handleNext}
-              className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"
+              className="next-button bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"
             >
               Next
             </button>
           ) : (
             <button
               type="submit"
+              className="submit-button bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded"
               onClick={onSubmit}
-              className="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded"
             >
               Submit
             </button>

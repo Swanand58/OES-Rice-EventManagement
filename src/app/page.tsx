@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const HomePage: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="mb-6 text-xl font-bold text-black" color="black">
+    <div className="home-container">
+      <h1 className="mb-6 text-xl font-bold text-white">
         Welcome to OConnor Building of Engineering Science at Rice
       </h1>
       <div className="space-y-4">

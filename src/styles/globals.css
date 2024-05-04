@@ -77,3 +77,222 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+  padding-top: 50px;
+  min-height: 100vh;
+  background: linear-gradient(rgba(199, 154, 154, 0.3), rgba(0, 0, 0, 0.3)),
+    url("https://www.archpaper.com/wp-content/uploads/2023/11/220060_000_N52_large-1.jpg")
+      no-repeat center center fixed;
+  background-size: cover;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 360px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+  padding-top: 50px;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("https://ofs.rice.edu/sites/g/files/bxs5401/files/inline-images/Screenshot%202023-10-27%20at%2011.54.31%20AM.png")
+      no-repeat center center fixed;
+  background-size: cover;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.login-nr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 50px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://www.archpaper.com/wp-content/uploads/2023/11/220060_000_N52_large-1.jpg")
+      no-repeat center center fixed;
+  background-size: cover;
+}
+
+.form-nr-container {
+  width: 100%;
+  max-width: 360px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  justify-content: space-around;
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://www.esmagazine.com/ext/resources/images/2024/Mar/ES-CIP-slide1-900x550-(1).jpg?1710014730")
+      no-repeat center center fixed;
+  background-size: cover;
+}
+
+.form-reg-container {
+  width: 100%;
+  max-width: 360px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px; /* Spacing between fields */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Button styling */
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745; /* Green background */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #1e7e34; /* Darker green on hover */
+}
+
+/* Link styling */
+.link {
+  color: #0056b3; /* Blue color for links */
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 10px; /* Spacing from the bottom of the form */
+}
+
+.link:hover {
+  color: #003975; /* Darker blue on hover */
+}
+
+.links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.link {
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+/* evenets page */
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      /* Dark overlay for better readability */ rgba(0, 0, 0, 0.5)
+    ),
+    url("https://snworksceo.imgix.net/rce/21f6bf06-54de-4ed9-bc12-3ad1dcbf72b6.sized-1000x1000.jpg?w=1000")
+      no-repeat center center fixed;
+  background-size: cover;
+}
+
+.form-ev-container {
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-size: 16px;
+  color: #000; /* Set text color to black */
+  margin-bottom: 10px;
+  text-align: left; /* Align text to the left */
+}
+
+.input-field,
+.select-field,
+.radio-field,
+.checkbox-option {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.radio-option,
+.checkbox-option {
+  display: block; /* Ensures the label takes the full width and aligns input with text */
+  color: #000; /* Ensure text color is black */
+  text-align: left; /* Align text to the left */
+  margin-bottom: 5px;
+}
+
+.input-options {
+  text-align: left;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
