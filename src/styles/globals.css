@@ -94,7 +94,6 @@ select {
 .form-container {
   width: 100%;
   max-width: 360px;
-  margin: auto;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -157,7 +156,6 @@ button:hover {
 .form-nr-container {
   width: 100%;
   max-width: 360px;
-  margin: auto;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 8px;
@@ -181,7 +179,6 @@ button:hover {
 .form-reg-container {
   width: 100%;
   max-width: 360px;
-  margin: auto;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 8px;
@@ -192,7 +189,7 @@ button:hover {
 .input-field {
   width: 100%;
   padding: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Spacing between fields */
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -201,7 +198,7 @@ button:hover {
 .submit-button {
   width: 100%;
   padding: 10px;
-  background-color: #28a745;
+  background-color: #28a745; /* Green background */
   color: white;
   border: none;
   border-radius: 4px;
@@ -210,19 +207,19 @@ button:hover {
 }
 
 .submit-button:hover {
-  background-color: #1e7e34;
+  background-color: #1e7e34; /* Darker green on hover */
 }
 
 /* Link styling */
 .link {
-  color: #0056b3;
+  color: #0056b3; /* Blue color for links */
   cursor: pointer;
   text-decoration: underline;
-  margin-top: 10px;
+  margin-top: 10px; /* Spacing from the bottom of the form */
 }
 
 .link:hover {
-  color: #003975;
+  color: #003975; /* Darker blue on hover */
 }
 
 .links-container {
@@ -246,7 +243,10 @@ button:hover {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      /* Dark overlay for better readability */ rgba(0, 0, 0, 0.5)
+    ),
     url("https://snworksceo.imgix.net/rce/21f6bf06-54de-4ed9-bc12-3ad1dcbf72b6.sized-1000x1000.jpg?w=1000")
       no-repeat center center fixed;
   background-size: cover;
@@ -255,7 +255,6 @@ button:hover {
 .form-ev-container {
   width: 100%;
   max-width: 500px;
-  margin: auto;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 8px;
@@ -266,9 +265,9 @@ button:hover {
 .label {
   display: block;
   font-size: 16px;
-  color: #000;
+  color: #000; /* Set text color to black */
   margin-bottom: 10px;
-  text-align: left;
+  text-align: left; /* Align text to the left */
 }
 
 .input-field,
@@ -282,9 +281,9 @@ button:hover {
 
 .radio-option,
 .checkbox-option {
-  display: block;
-  color: #000;
-  text-align: left;
+  display: block; /* Ensures the label takes the full width and aligns input with text */
+  color: #000; /* Ensure text color is black */
+  text-align: left; /* Align text to the left */
   margin-bottom: 5px;
 }
 
@@ -296,16 +295,4 @@ button:hover {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
-}
-@media (max-width: 640px) {
-  .label {
-    font-size: 16px;
-  }
-  .input-field,
-  .select-field {
-    padding: 8px;
-  }
-  .button-container {
-    flex-direction: column;
-  }
 }
